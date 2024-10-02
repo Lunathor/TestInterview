@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Counter</title>
+</head>
+<body>
+    <h1>Word Counter</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Upload File</button>
+    </form>
+    <form method="post">
+        <input type="text" name="word" placeholder="Enter a word">
+        <button type="submit">Get Word Count</button>
+    </form>
+    <button onclick="clearData()">Clear Data</button>
+
+    <script>
+        function clearData() {
+            fetch('/clear-data/', {method: 'POST'})
+                .then(response => response.text())
+                .then(message => alert(message));
+        }
+    </script>
+</body>
+</html>
