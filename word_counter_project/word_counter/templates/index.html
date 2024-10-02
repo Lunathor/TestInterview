@@ -6,10 +6,12 @@
 <body>
     <h1>Word Counter</h1>
     <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
         <input type="file" name="file">
         <button type="submit">Upload File</button>
     </form>
     <form method="post">
+        {% csrf_token %}
         <input type="text" name="word" placeholder="Enter a word">
         <button type="submit">Get Word Count</button>
     </form>
