@@ -9,7 +9,7 @@ from .models import WordCount
 
 
 def index(request):
-    return render(request, 'word_counter/index.html')
+    return render(request, 'index.html')
 
 
 def upload_file(request):
